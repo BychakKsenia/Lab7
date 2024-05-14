@@ -4,8 +4,8 @@ namespace Prime.Services
     {
         public string GetVectorsTypes(double x1, double y1, double x2, double y2)
         {
-            if ((x1 == 0 && y1 == 0) || (x2 == 0 && y2 == 0)) return "Один (або обидва) з векторів - точка";
-            string answer = "Вектори";
+            if ((x1 == 0 && y1 == 0) || (x2 == 0 && y2 == 0)) return "One (or both) of vectors is dot";
+            string answer = "Vectors are";
             bool isColinear;
             bool isOpposite = false;
             double size1 = Math.Sqrt(x1 * x1 + y1 * y1);
@@ -26,14 +26,14 @@ namespace Prime.Services
             }
             else isColinear = false;
             if (n < 0) isOpposite = true;
-            if (isEqSize) answer += " рівні";
+            if (isEqSize) answer += " equal";
             if (isColinear)
             {
-                answer += " колінеарні";
-                if (isOpposite) answer += " протилежнопрямлені";
-                else answer += " співнапрямлені";
+                answer += " collinear";
+                if (isOpposite) answer += " unlike";
+                else answer += " like";
             }
-            else answer += " неколінеарні";
+            else answer += " non-collinear";
             return answer;
         }
 

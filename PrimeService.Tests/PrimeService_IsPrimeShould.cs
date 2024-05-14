@@ -19,7 +19,7 @@ namespace Prime.UnitTests.Services
         public void IsVectorDot(double x1, double y1, double x2, double y2)
         {
             var result = _primeService.GetVectorsTypes(x1, y1, x2, y2);
-            Assert.Equal("Один (або обидва) з векторів - точка", result);
+            Assert.Equal("One (or both) of vectors is dot", result);
         }
 
         [Theory]
@@ -30,7 +30,7 @@ namespace Prime.UnitTests.Services
         public void IsEqualLength(double x1, double y1, double x2, double y2)
         {
             var result = _primeService.GetVectorsTypes(x1, y1, x2, y2);
-            Assert.Contains("рівні",result);
+            Assert.Contains("equal",result);
         }
 
         [Theory]
@@ -41,7 +41,7 @@ namespace Prime.UnitTests.Services
         public void IsOpposite(double x1, double y1, double x2, double y2)
         {
             var result = _primeService.GetVectorsTypes(x1, y1, x2, y2);
-            Assert.Contains("протилежнопрямлені", result);
+            Assert.Contains("unlike", result);
         }
 
         [Theory]
@@ -52,7 +52,7 @@ namespace Prime.UnitTests.Services
         public void IsNotColinear(double x1, double y1, double x2, double y2)
         {
             var result = _primeService.GetVectorsTypes(x1, y1, x2, y2);
-            Assert.Contains("неколінеарні", result);
+            Assert.Contains("non-collinear", result);
         }
     }
 }
